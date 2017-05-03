@@ -32,12 +32,6 @@ namespace GitTrio.Controllers
             return View(cupcakeRepo.Cupcakes.ToList());
         }
 
-        //public IActionResult Details(int id)
-        //{
-        //    Cupcake thisCupcake = cupcakeRepo.Details(id);
-        //    return View(thisCupcake);
-        //}
-
         public IActionResult Details(int id)
         {
             Cupcake thisCupcake = cupcakeRepo.Details(id);

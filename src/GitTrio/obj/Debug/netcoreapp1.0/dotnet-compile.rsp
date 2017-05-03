@@ -203,7 +203,7 @@ C:\Users\epicodus\Desktop\GitTrio\src\GitTrio\Controllers\HomeController.cs
 C:\Users\epicodus\Desktop\GitTrio\src\GitTrio\Migrations\20170503174832_Initial.cs
 C:\Users\epicodus\Desktop\GitTrio\src\GitTrio\Migrations\20170503174832_Initial.Designer.cs
 C:\Users\epicodus\Desktop\GitTrio\src\GitTrio\Migrations\GitTrioContextModelSnapshot.cs
-C:\Users\epicodus\Desktop\GitTrio\src\GitTrio\Models\Cupcake.cs
 C:\Users\epicodus\Desktop\GitTrio\src\GitTrio\Models\GitTrioContext.cs
+C:\Users\epicodus\Desktop\GitTrio\src\GitTrio\Models\Repositories\Cupcake.cs
 C:\Users\epicodus\Desktop\GitTrio\src\GitTrio\Models\Repositories\EFCupcakeRepository.cs
 C:\Users\epicodus\Desktop\GitTrio\src\GitTrio\Models\Repositories\ICupcakeRepository.cs

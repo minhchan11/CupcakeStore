@@ -12,4 +12,15 @@
         });
     });
 
+    $("#click-create").click(function () {
+        $.ajax({
+            type: 'GET',
+            datatype: 'html',
+            url: '/Cupcake/Create',
+            success: function (result) {
+                $('.return-create').html(result);
+            }
+        });
+    });
+
 });
