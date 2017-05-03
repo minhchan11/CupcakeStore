@@ -1,22 +1,21 @@
-﻿<!DOCTYPE html>
-<html xmlns="http://www.w3.org/1999/xhtml">
-<head>
-    <title>Suggestions</title>
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.0/jquery.min.js"></script>
-    <script src="~/js/scripts.js"></script>
-</head>
-<body>
+﻿
+@{
+    ViewData["Title"] = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
 @model IEnumerable<GitTrio.Models.Cupcake>
 
 <h1> Cupcakes</h1>
+    
+        @foreach (var cupcake in Model)
+        {
+            <p class="click-details" id="@cupcake.Id">
+                @Html.DisplayFor(modelCupcake => cupcake.Name)
+            </p>
+        }
 
-@foreach (var cupcake in Model)
-{
-    <p class="click-details" id="@cupcake.Id">
-        @Html.DisplayFor(modelCupcake => cupcake.Name)
-    </p>
-}
-
+    <p id="cupcake-list"></p>
 
 <h2> Display details</h2>
 <div class="return-details"></div>
@@ -24,7 +23,3 @@
 <div id="click-create">Add cupcake to inventory</div>
 <div class="return-create">
 </div>
-
-
-</body>
-</html>

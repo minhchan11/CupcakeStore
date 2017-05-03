@@ -6,6 +6,7 @@ using Microsoft.AspNetCore.Mvc;
 using GitTrio.Models;
 using Microsoft.EntityFrameworkCore;
 
+
 // For more information on enabling MVC for empty projects, visit http://go.microsoft.com/fwlink/?LinkID=397860
 
 namespace GitTrio.Controllers
@@ -43,10 +44,11 @@ namespace GitTrio.Controllers
         }
 
         [HttpPost]
-        public IActionResult Create(Cupcake cupcake)
+        public IActionResult Create(string newName, string newDescription, int newPrice, string newCake, string newFrosting, string newTopping, int newInventory, string newImage)
         {
-            cupcakeRepo.Save(cupcake);
-            return RedirectToAction("Index");
+            Cupcake newCupcake = new Cupcake(newName, newDescription, newPrice, newCake, newFrosting, newTopping, newInventory, newImage);
+            cupcakeRepo.Save(newCupcake);
+            return Json(newCupcake);
         }
 
         public IActionResult Edit(int id)

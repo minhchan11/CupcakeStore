@@ -59,6 +59,8 @@ namespace GitTrio
 
         private static void AddTestData(GitTrioContext context)
         {
+            context.Database.ExecuteSqlCommand("TRUNCATE TABLE Cupcakes");
+
             var cupcake1 = new Cupcake("Limoncello Meringue", "Vanilla cake with marshmallow frosting, browned to perfection.", 2, "Vanilla", "Marshmallow", "None", 24, "http://www.cupcakeroyale.com/wp-content/uploads/2016/04/Limoncello.jpg");
             context.Cupcakes.Add(cupcake1);
 

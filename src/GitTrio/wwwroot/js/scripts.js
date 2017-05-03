@@ -23,4 +23,19 @@
         });
     });
 
+    $('.new-cupcake').submit(function (event) {
+        event.preventDefault();
+        $.ajax({
+            url: 'Cupcake/Create',
+            type: 'POST',
+            dataType: 'json',
+            data: $(this).serialize(),
+            success: function (result) {
+                console.log(result);
+                var resultReturn = result.cake;
+                $('#cupcake-list').append('<p>' + resultReturn + '</p>');
+            }
+        });
+    });
+
 });
