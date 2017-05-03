@@ -13,22 +13,11 @@ This website will match people
 ##### Create Database and Tables
 * In a command window:
 
-
-
-```
-* Requires DNU, DNX, MSSQL, and Mono
-* Clone to local machine
-* Use command "dnu restore" in command prompt/shell
-* Use command "dnx kestrel" to start server
-* Navigate to http://localhost:5004 in web browser of choice
-
 ## Specifications
 
 #### Cupcake Class
 * The Equals method for the Band class will return true if the Band in local memory matches the Band pulled from the database.
   * Example Input:
-> Local: "Green Day" , id is 1;
-> Database: "Green Day" , id is 1;
 
   * Example Output: `true`
 
