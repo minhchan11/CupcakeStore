@@ -32,7 +32,7 @@
             data: $(this).serialize(),
             success: function (result) {
                 console.log(result);
-                var resultReturn = result.cake;
+                var resultReturn = result.name;
                 $('#cupcake-list').append('<p>' + resultReturn + '</p>');
             }
         });
