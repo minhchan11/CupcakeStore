@@ -1,5 +1,12 @@
-﻿@*
-    For more information on enabling MVC for empty projects, visit http://go.microsoft.com/fwlink/?LinkID=397860
-*@
-@{
-}
+﻿
+@model GitTrio.Models.Cupcake
+
+
+<p>@Html.DisplayFor(model => model.Name)</p>
+<p>@Html.DisplayFor(model => model.Description)</p>
+<p>@Html.DisplayFor(model => model.Price)</p>
+<p>@Html.DisplayFor(model => model.Cake)</p>
+<p>@Html.DisplayFor(model => model.Frosting)</p>
+<p>@Html.DisplayFor(model => model.Topping)</p>
+<img src="@Html.DisplayFor(model => model.ImgUrl)" alt="Alternate Text" />
+

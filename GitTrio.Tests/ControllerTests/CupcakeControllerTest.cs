@@ -44,8 +44,6 @@ namespace GitTrio.Tests.ControllerTest
             CupcakeController controller = new CupcakeController(db);
             var testCupcake = new Cupcake("Limoncello Meringue", "Vanilla cake with marshmallow frosting, browned to perfection.", 2, "Vanilla", "Marshmallow", "None", 24, "http://www.cupcakeroyale.com/wp-content/uploads/2016/04/Limoncello.jpg");
             controller.Create(testCupcake);
-            //controller.Details(testCupcake.Id);
-            //need to change model to single cupcake object
             var model = (controller.Details(testCupcake.Id) as ViewResult).ViewData.Model as Cupcake;
             Assert.Equal(testCupcake, model);
         }
@@ -55,7 +53,31 @@ namespace GitTrio.Tests.ControllerTest
         {
             CupcakeController controller = new CupcakeController(db);
             var testCupcake = new Cupcake("Limoncello Meringue", "Vanilla cake with marshmallow frosting, browned to perfection.", 2, "Vanilla", "Marshmallow", "None", 24, "http://www.cupcakeroyale.com/wp-content/uploads/2016/04/Limoncello.jpg");
+            controller.Create(testCupcake);
+            testCupcake.Name = "Lemon";
+            controller.Edit(testCupcake);
+            var model = (controller.Details(testCupcake.Id) as ViewResult).ViewData.Model as Cupcake;
 
+            Assert.Equal("Lemon", model.Name);
+        }
+
+        [Fact]
+        public void Database_DeleteDatabaseObject_SelectedCupcakeIsDeleted()
+        {
+            CupcakeController controller = new CupcakeController(db);
+
+            var testCupcake = new Cupcake("Limoncello Meringue", "Vanilla cake with marshmallow frosting, browned to perfection.", 2, "Vanilla", "Marshmallow", "None", 24, "http://www.cupcakeroyale.com/wp-content/uploads/2016/04/Limoncello.jpg");
+            controller.Create(testCupcake);
+
+            var testCupcake2 = new Cupcake("Red Velvet", "Vanilla cake with marshmallow frosting, browned to perfection.", 2, "Chocolate", "Marshmallow", "None", 24, "http://www.cupcakeroyale.com/wp-content/uploads/2016/04/Limoncello.jpg");
+            controller.Create(testCupcake2);
+            controller.DeleteConfirmed(testCupcake2.Id);
+
+            List<Cupcake> expected = new List<Cupcake> { testCupcake };
+
+            var collection = (controller.Index() as ViewResult).ViewData.Model as IEnumerable<Cupcake>;
+
+            Assert.Equal(expected, collection);
         }
 
         public void Dispose()

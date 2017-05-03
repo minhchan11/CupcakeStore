@@ -49,7 +49,7 @@ namespace GitTrio
             {
                 routes.MapRoute(
                     name: "default",
-                    template: "{controller=Home}/{action=Index}/{id?}");
+                    template: "{controller=Cupcake}/{action=Index}/{id?}");
             });
 
             app.Run(async (context1) =>

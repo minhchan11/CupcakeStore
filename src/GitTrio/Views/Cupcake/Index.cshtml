@@ -1,1 +1,10 @@
-﻿<h1> Cupcakes</h1>
+﻿
+@model IEnumerable<GitTrio.Models.Cupcake>
+
+<h1> Cupcakes</h1>
+
+
+@foreach (var cupcake in Model)
+{
+    <li>@Html.DisplayFor(modelCupcake => cupcake.Name) | @Html.ActionLink("Details", "Details", new { id = cupcake.Id }) </li>
+}
