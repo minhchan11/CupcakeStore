@@ -8,7 +8,7 @@ using GitTrio.Models;
 namespace GitTrio.Migrations
 {
     [DbContext(typeof(GitTrioContext))]
-    [Migration("20170503174832_Initial")]
+    [Migration("20170504155333_Initial")]
     partial class Initial
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)

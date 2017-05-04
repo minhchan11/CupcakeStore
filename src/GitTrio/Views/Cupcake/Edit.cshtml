@@ -1,0 +1,37 @@
+﻿@{
+    ViewData["Title"] = "Edit";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+@model GitTrio.Models.Cupcake
+
+<h3>Edit cupcake</h3>
+<form action="Edit" class="edit-cupcake">
+    <input type="hidden" name="id" value="@Model.Id">
+
+    <label for="newName">Name:</label>
+    <input type="text" name="newName" value="@Model.Name"/>
+    <br />
+    <label for="newDescription"> Description:</label>
+    <input type="text" name="newDescription" value="@Model.Description"/>
+    <br />
+    <label for="newPrice">Price:</label>
+    <input type="number" name="newPrice" value="@Model.Price" />
+    <br />
+    <label for="newCake"> Cake:</label>
+    <input type="text" name="newCake" value="@Model.Cake" />
+    <br />
+    <label for="newFrosting"> Frosting:</label>
+    <input type="text" name="newFrosting" value="@Model.Frosting" />
+    <br />
+    <label for="newTopping"> Topping:</label>
+    <input type="text" name="newTopping" value="@Model.Topping" />
+    <br />
+    <label for="newInventory"> Inventory:</label>
+    <input type="number" name="newInventory" value="@Model.Inventory" />
+    <br />
+    <label for="newImage"> Image Url:</label>
+    <input type="text" name="newImage" value="@Model.ImgUrl" />
+    <br />
+    <button type="submit">Submit</button>
+</form>

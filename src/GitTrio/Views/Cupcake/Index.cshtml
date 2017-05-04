@@ -7,19 +7,25 @@
 @model IEnumerable<GitTrio.Models.Cupcake>
 
 <h1> Cupcakes</h1>
-    
-        @foreach (var cupcake in Model)
-        {
-            <p class="click-details" id="@cupcake.Id">
-                @Html.DisplayFor(modelCupcake => cupcake.Name)
-            </p>
-        }
 
-    <p id="cupcake-list"></p>
+@foreach (var cupcake in Model)
+{
+    <p>
+        <span class="click-details" id="@cupcake.Id">
+            @Html.DisplayFor(modelCupcake => cupcake.Name)
+        </span> <button class="edit-form" value="@cupcake.Id"> Edit </button>
+    </p>
+
+
+}
+
+<p id="cupcake-list"></p>
 
 <h2> Display details</h2>
 <div class="return-details"></div>
 
 <div id="click-create">Add cupcake to inventory</div>
-<div class="return-create">
-</div>
+<div class="return-create"></div>
+
+<div class="return-edit"></div>
+

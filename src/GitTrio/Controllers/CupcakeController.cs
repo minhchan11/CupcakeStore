@@ -58,10 +58,20 @@ namespace GitTrio.Controllers
         }
 
         [HttpPost]
-        public IActionResult Edit(Cupcake cupcake)
+        public IActionResult Edit(string newName, string newDescription, int newPrice, string newCake, string newFrosting, string newTopping, int newInventory, string newImage, int id)
         {
-            cupcakeRepo.Edit(cupcake);
-            return RedirectToAction("Index");
+            Cupcake thisCupcake = cupcakeRepo.Cupcakes.FirstOrDefault(x => x.Id == id);
+            thisCupcake.Name = newName;
+            thisCupcake.Description = newDescription;
+            thisCupcake.Price = newPrice;
+            thisCupcake.Cake = newCake;
+            thisCupcake.Frosting = newFrosting;
+            thisCupcake.Topping = newTopping;
+            thisCupcake.Inventory = newInventory;
+            thisCupcake.ImgUrl = newImage;
+
+            cupcakeRepo.Edit(thisCupcake);
+            return Json(thisCupcake);
         }
         public IActionResult Delete(int id)
         {
