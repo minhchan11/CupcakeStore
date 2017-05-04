@@ -8,8 +8,8 @@ using GitTrio.Models;
 namespace GitTrio.Migrations
 {
     [DbContext(typeof(GitTrioContext))]
-    [Migration("20170504175658_JointTable")]
-    partial class JointTable
+    [Migration("20170504215814_Initial")]
+    partial class Initial
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {

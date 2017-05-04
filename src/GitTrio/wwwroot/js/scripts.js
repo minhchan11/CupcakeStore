@@ -1,13 +1,11 @@
 ﻿$(document).ready(function () {
     $(".click-details").click(function(){
-        console.log(this.id);
         $.ajax({
             type: 'GET',
             dataType: 'html',
             url: 'Cupcake/Details/' + this.id,
             success: function (result) {
                 $('.return-details').html(result);
-                console.log(result);
             }
         });
     });
@@ -51,7 +49,6 @@
 
     $('.edit-cupcake').submit(function (event) {
         event.preventDefault();
-        console.log($(this).serialize());
         $.ajax({
             url: 'Cupcake/Edit',
             type: 'POST',
@@ -60,19 +57,16 @@
             success: function (result) {
                 var editedCupcake = result.name;
                 var cupcakeId = result.id.toString();
-
                 $('#' + cupcakeId).text(editedCupcake);
             }
         });
     });
 
     $(".delete-cupcake").click(function () {
-        console.log(this.value);
         $.ajax({
             type: "POST",
             url: 'Cupcake/Delete/' + this.value,
             success: function (result) {
-              
                 var cupcakeId = result.id.toString();
                 $('.each-' + cupcakeId).remove();
             }
