@@ -202,8 +202,12 @@ C:\Users\epicodus\Desktop\CupcakeStore\src\GitTrio\Controllers\CupcakeController
 C:\Users\epicodus\Desktop\CupcakeStore\src\GitTrio\Controllers\HomeController.cs
 C:\Users\epicodus\Desktop\CupcakeStore\src\GitTrio\Migrations\20170504155333_Initial.cs
 C:\Users\epicodus\Desktop\CupcakeStore\src\GitTrio\Migrations\20170504155333_Initial.Designer.cs
+C:\Users\epicodus\Desktop\CupcakeStore\src\GitTrio\Migrations\20170504175658_JointTable.cs
+C:\Users\epicodus\Desktop\CupcakeStore\src\GitTrio\Migrations\20170504175658_JointTable.Designer.cs
 C:\Users\epicodus\Desktop\CupcakeStore\src\GitTrio\Migrations\GitTrioContextModelSnapshot.cs
+C:\Users\epicodus\Desktop\CupcakeStore\src\GitTrio\Models\Cupcake.cs
+C:\Users\epicodus\Desktop\CupcakeStore\src\GitTrio\Models\CupcakeUser.cs
 C:\Users\epicodus\Desktop\CupcakeStore\src\GitTrio\Models\GitTrioContext.cs
-C:\Users\epicodus\Desktop\CupcakeStore\src\GitTrio\Models\Repositories\Cupcake.cs
+C:\Users\epicodus\Desktop\CupcakeStore\src\GitTrio\Models\User.cs
 C:\Users\epicodus\Desktop\CupcakeStore\src\GitTrio\Models\Repositories\EFCupcakeRepository.cs
 C:\Users\epicodus\Desktop\CupcakeStore\src\GitTrio\Models\Repositories\ICupcakeRepository.cs

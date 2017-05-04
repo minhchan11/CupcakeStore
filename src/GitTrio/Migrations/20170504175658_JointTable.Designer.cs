@@ -8,9 +8,10 @@ using GitTrio.Models;
 namespace GitTrio.Migrations
 {
     [DbContext(typeof(GitTrioContext))]
-    partial class GitTrioContextModelSnapshot : ModelSnapshot
+    [Migration("20170504175658_JointTable")]
+    partial class JointTable
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
             modelBuilder
                 .HasAnnotation("ProductVersion", "1.0.0-rtm-21431")

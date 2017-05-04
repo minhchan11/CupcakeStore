@@ -20,6 +20,7 @@ namespace GitTrio.Models
         public string Topping { get; set; }
         public int Inventory { get; set; }
         public string ImgUrl { get; set; }
+        public ICollection<CupcakeUser> CupcakesUsers { get; set; }
 
         public Cupcake()
         {

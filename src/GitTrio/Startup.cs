@@ -59,13 +59,17 @@ namespace GitTrio
 
         private static void AddTestData(GitTrioContext context)
         {
-            context.Database.ExecuteSqlCommand("TRUNCATE TABLE Cupcakes");
+            context.Database.ExecuteSqlCommand("Delete From Cupcakes");
+            context.Database.ExecuteSqlCommand("Delete From Users");
 
             var cupcake1 = new Cupcake("Limoncello Meringue", "Vanilla cake with marshmallow frosting, browned to perfection.", 2, "Vanilla", "Marshmallow", "None", 24, "http://www.cupcakeroyale.com/wp-content/uploads/2016/04/Limoncello.jpg");
             context.Cupcakes.Add(cupcake1);
 
             var cupcake2 = new Cupcake("Rhubarb Almond Buckle", "Our vanilla cupcake filled with a tangy rhubarb compote, topped with fresh strawberry buttercream and almond streusel. Available May only!", 3, "Almond", "Rhubarb", "Almonds", 36, "http://www.cupcakeroyale.com/wp-content/uploads/2016/03/Rhubarb-Crisp-084.jpg");
             context.Cupcakes.Add(cupcake2);
+
+            var user1 = new User("user1", "password");
+            context.Users.Add(user1);
 
             context.SaveChanges();
         }

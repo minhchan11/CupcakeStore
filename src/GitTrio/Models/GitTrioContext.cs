@@ -13,6 +13,8 @@ namespace GitTrio.Models
         }
 
         public virtual DbSet<Cupcake> Cupcakes { get; set; }
+        public virtual DbSet<User> Users { get; set; }
+        public virtual DbSet<CupcakeUser> CupcakesUsers { get; set; }
 
         protected override void OnConfiguring(DbContextOptionsBuilder options)
         {
@@ -27,6 +29,19 @@ namespace GitTrio.Models
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
             base.OnModelCreating(modelBuilder);
+
+            modelBuilder.Entity<CupcakeUser>()
+                .HasKey(t => new { t.Id, t.UserId });
+
+            //modelBuilder.Entity<CupcakeUser>()
+            //    .HasOne(pt => pt.Cupcake)
+            //    .WithMany(p => p.CupcakesUsers)
+            //    .HasForeignKey(pt => pt.Id);
+
+            //modelBuilder.Entity<CupcakeUser>()
+            //   .HasOne(pt => pt.User)
+            //   .WithMany(p => p.CupcakesUsers)
+            //   .HasForeignKey(pt => pt.UserId);
         }
     }
 }
