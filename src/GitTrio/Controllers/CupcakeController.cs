@@ -84,7 +84,7 @@ namespace GitTrio.Controllers
         {
             Cupcake thisCupcake = cupcakeRepo.Cupcakes.FirstOrDefault(x => x.Id == id);
             cupcakeRepo.Remove(thisCupcake);
-            return RedirectToAction("Index");
+            return Json(thisCupcake);
         }
     }
 }

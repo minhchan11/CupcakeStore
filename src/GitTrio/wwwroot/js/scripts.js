@@ -12,6 +12,7 @@
         });
     });
 
+
     $("#click-create").click(function () {
         $.ajax({
             type: 'GET',
@@ -64,4 +65,17 @@
             }
         });
     });
+
+    $(".delete-cupcake").click(function () {
+        console.log(this.value);
+        $.ajax({
+            type: "POST",
+            url: 'Cupcake/Delete/' + this.value,
+            success: function (result) {
+              
+                var cupcakeId = result.id.toString();
+                $('.each-' + cupcakeId).remove();
+            }
+        });
+    })
 });

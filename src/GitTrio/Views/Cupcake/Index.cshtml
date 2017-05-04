@@ -10,10 +10,10 @@
 
 @foreach (var cupcake in Model)
 {
-    <p>
+    <p class="each-@cupcake.Id">
         <span class="click-details" id="@cupcake.Id">
             @Html.DisplayFor(modelCupcake => cupcake.Name)
-        </span> <button class="edit-form" value="@cupcake.Id"> Edit </button>
+        </span> <button class="edit-form" value="@cupcake.Id"> Edit </button> <button class="delete-cupcake" value="@cupcake.Id">Delete</button>
     </p>
 
 
