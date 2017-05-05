@@ -6,7 +6,6 @@ using Microsoft.AspNetCore.Mvc;
 using GitTrio.Models;
 using Microsoft.EntityFrameworkCore;
 
-// For more information on enabling MVC for empty projects, visit http://go.microsoft.com/fwlink/?LinkID=397860
 
 namespace GitTrio.Controllers
 {
@@ -32,12 +31,6 @@ namespace GitTrio.Controllers
             return View(cupcakeRepo.Cupcakes.ToList());
         }
 
-        //public IActionResult Details(int id)
-        //{
-        //    Cupcake thisCupcake = cupcakeRepo.Details(id);
-        //    return View(thisCupcake);
-        //}
-
         public IActionResult Details(int id)
         {
             Cupcake thisCupcake = cupcakeRepo.Details(id);
@@ -49,10 +42,11 @@ namespace GitTrio.Controllers
         }
 
         [HttpPost]
-        public IActionResult Create(Cupcake cupcake)
+        public IActionResult Create(string newName, string newDescription, int newPrice, string newCake, string newFrosting, string newTopping, int newInventory, string newImage)
         {
-            cupcakeRepo.Save(cupcake);
-            return RedirectToAction("Index");
+            Cupcake newCupcake = new Cupcake(newName, newDescription, newPrice, newCake, newFrosting, newTopping, newInventory, newImage);
+            cupcakeRepo.Save(newCupcake);
+            return Json(newCupcake);
         }
 
         public IActionResult Edit(int id)
@@ -62,10 +56,20 @@ namespace GitTrio.Controllers
         }
 
         [HttpPost]
-        public IActionResult Edit(Cupcake cupcake)
+        public IActionResult Edit(string newName, string newDescription, int newPrice, string newCake, string newFrosting, string newTopping, int newInventory, string newImage, int id)
         {
-            cupcakeRepo.Edit(cupcake);
-            return RedirectToAction("Index");
+            Cupcake thisCupcake = cupcakeRepo.Cupcakes.FirstOrDefault(x => x.Id == id);
+            thisCupcake.Name = newName;
+            thisCupcake.Description = newDescription;
+            thisCupcake.Price = newPrice;
+            thisCupcake.Cake = newCake;
+            thisCupcake.Frosting = newFrosting;
+            thisCupcake.Topping = newTopping;
+            thisCupcake.Inventory = newInventory;
+            thisCupcake.ImgUrl = newImage;
+
+            cupcakeRepo.Edit(thisCupcake);
+            return Json(thisCupcake);
         }
         public IActionResult Delete(int id)
         {
@@ -78,7 +82,7 @@ namespace GitTrio.Controllers
         {
             Cupcake thisCupcake = cupcakeRepo.Cupcakes.FirstOrDefault(x => x.Id == id);
             cupcakeRepo.Remove(thisCupcake);
-            return RedirectToAction("Index");
+            return Json(thisCupcake);
         }
     }
 }
